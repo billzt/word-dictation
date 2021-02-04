@@ -4,7 +4,7 @@ It wroks in an interative shell. When you press Enter once, it will speak a line
 
 # Run
 1. Download and unpack this archive. 
-2. Double-click 'dictation.command'. 
+2. Double-click `dictation.command`. 
 3. An interative shell will appear. Then you can input your commands.
 
 # Commands
