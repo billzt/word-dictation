@@ -1,0 +1,13 @@
+###en
+bag
+bed
+bee
+egg
+hill
+lake
+name
+jeep
+bike
+desk
+cake
+banana
