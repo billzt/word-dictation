@@ -1,4 +1,4 @@
-# word-dictation
+# Word Dictation
 A word or sentence dictation script based on MacOS.
 It wroks in an interative shell. When you press Enter once, it will speak a line in file `dictation.txt` in ***random order***. 
 
@@ -72,4 +72,11 @@ The first line starting with `###` indicates the ***two-letter language code***.
 
 Following lines are words or sentences to be dictated. One line by one line.
 
+# Modify `dictation.py`
+By default, only English (en) and Japanese (jp) has been included. See
+https://github.com/billzt/word-dictation/blob/2daca547d8b9f1f9e19125e7bc53e39f39009ec2/dictation.py#L60
 
+If you want to add other languages, add language to this line. For example, add French:
+```python
+lang2voice = {"en":'Alex Fiona Karen Daniel Samantha Tessa Fred Moira Veena Rishi Victoria', "jp":'Kyoko Otoya', "fr":'Amelie Thomas'}
+```
