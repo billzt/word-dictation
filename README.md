@@ -17,7 +17,7 @@ If you want to exit in the middle steps, press Control+D.
 
 # Modify `dictation.txt`
 The first line starting with `###` indicates the ***two-letter language code***. Supporting languages are:
-
+（It might vary depending on your computer. Open your terminal and run `say -v '?'` to see the language list in your own system）
 | Name | Gender | Lang | FullLang |
 | --- | --- | --- | --- |
 | Maged | Male | ar | ar_SA |
@@ -80,3 +80,6 @@ If you want to add other languages, add language to this line. For example, add 
 ```python
 lang2voice = {"en":'Alex Fiona Karen Daniel Samantha Tessa Fred Moira Veena Rishi Victoria', "jp":'Kyoko Otoya', "fr":'Amelie Thomas'}
 ```
+
+# Check your answers!
+After finishing dictation, you can find answers in `dictation_answer.txt`. During the dictation process, you can also type `s` to save current answers manually.
