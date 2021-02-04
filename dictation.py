@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
 
-'''Here is the title
-Here is the document
-'''
-
-__author__ = 'Tao Zhu'
-__copyright__ = 'Copyright 2019'
-__license__ = 'GPL'
-__version__ = '0.1'
-__email__ = 'taozhu@mail.bnu.edu.cn'
-__status__ = 'Development'
-
 import argparse
 import re
 import sys
@@ -76,7 +65,4 @@ if __name__ == '__main__':
         exit(0)
 
     SayItem().cmdloop()
-
-#查看所有声音列表 say --voice='?'
-#如使用婷婷语音 say -v Ting-Ting 北京欢迎您
 
