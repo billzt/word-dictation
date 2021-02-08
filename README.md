@@ -1,6 +1,6 @@
 # Word Dictation
 A word or sentence dictation script based on MacOS.
-It wroks in an interative shell. When you press Enter once, it will speak a line in file `dictation.txt` in ***random order***. 
+It wroks in an interative shell. When you input `n` once, it will speak a line in file `dictation.txt` in ***random order***. 
 
 # Run
 1. Download and unpack this archive. 
@@ -9,14 +9,15 @@ It wroks in an interative shell. When you press Enter once, it will speak a line
 
 # Commands
 ```bash
-n  # Start dictation, or jump to the Next word/sentence.
+n  # start dictation, or jump to the Next word/sentence.
 r  # Repeat the previous word/sentence.
+s  # Save answers manually. 
 ```
-You can use "Enter" directly to repeat the former command.
-If you want to exit in the middle steps, press Control+D.
+You can press key `↑`  to repeat the former command.
+If you want to exit in the middle steps, press `Control+D`.
 
 # Modify `dictation.txt`
-The first line starting with `###` indicates the ***two-letter language code***. Supporting languages are:
+The first line starting with `###LANG=` indicates the ***two-letter language code***. Supporting languages are:
 （It might vary depending on your computer. Open your terminal and run `say -v '?'` to see the language list in your own system）
 | Name | Gender | Lang | FullLang |
 | --- | --- | --- | --- |
@@ -70,6 +71,8 @@ The first line starting with `###` indicates the ***two-letter language code***.
 | Sin-ji | Female | zh | zh_HK |
 | Ting-Ting | Female | zh | zh_CN |
 
+The second line starting with `###RANDOM=` indicates whether you want to dictate in random order (1) or not (0).
+
 Following lines are words or sentences to be dictated. One line by one line.
 
 # Modify `dictation.py`
@@ -82,4 +85,6 @@ lang2voice = {"en":'Alex Fiona Karen Daniel Samantha Tessa Fred Moira Veena Rish
 ```
 
 # Check your answers!
-After finishing dictation, you can find answers in `dictation_answer.txt`. During the dictation process, you can also type `s` to save current answers manually.
+After finishing dictation, you can find answers in `dictation_answer.txt`. During the dictation process, you can also type `s` to save current answers manually. However if you set `RANDOM=0`, the answers would be the same with `dictation.txt`.
+
+
