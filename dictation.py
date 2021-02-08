@@ -44,7 +44,7 @@ class SayItem(cmd.Cmd):
         if current_num == 1:
             print(f'Dictation has not begun yet. Please type n', file=sys.stderr)
         else:
-            print(f"Say {current_num-1}/{all_num} in {voices[(current_num-1)%len(voices)]}")
+            print(f"Say {current_num-1}/{all_num} [again] by voice:  {voices[(current_num-1)%len(voices)]}")
             os.system(f'say -v {voices[(current_num-1)%len(voices)]} {previous_line}')
 
     def do_s(self, line):
@@ -56,6 +56,9 @@ class SayItem(cmd.Cmd):
         save_answer()
         return True
 
+    def emptyline(self):
+        1
+
     def postloop(self):
         print()
 
@@ -66,11 +69,14 @@ if __name__ == '__main__':
         for line in f:
             words = line.strip()
             if words != '':
-                if words.startswith('###'):
-                    lang = words.replace('###', '')
+                if words.startswith('###LANG='):
+                    lang = words.replace('###LANG=', '').strip()
+                elif words.startswith('###RANDOM='):
+                    rand_order = words.replace('###RANDOM=', '').strip()
                 else:
                     items.append(line.strip())
-    random.shuffle(items)
+    if rand_order == '1':
+        random.shuffle(items)
     all_num = len(items)
     lang2voice = {"en":'Alex Fiona Karen Daniel Samantha Tessa Fred Moira Veena Rishi Victoria', "jp":'Kyoko Otoya'}
     if lang in lang2voice:
