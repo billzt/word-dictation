@@ -28,7 +28,7 @@ class SayItem(cmd.Cmd):
         if len(items)>0:
             #print("hi,", items[0])
             print(f"Say {current_num}/{all_num} by voice: {voices[current_num%len(voices)]}")
-            os.system(f'say -v {voices[current_num%len(voices)]} {items[0]}')
+            os.system(f'say -v {voices[current_num%len(voices)]} "{items[0]}"')
             previous_line = items[0]
             now_dictation_items.append(items[0])
             del(items[0])
@@ -45,7 +45,7 @@ class SayItem(cmd.Cmd):
             print(f'Dictation has not begun yet. Please type n', file=sys.stderr)
         else:
             print(f"Say {current_num-1}/{all_num} [again] by voice:  {voices[(current_num-1)%len(voices)]}")
-            os.system(f'say -v {voices[(current_num-1)%len(voices)]} {previous_line}')
+            os.system(f'say -v {voices[(current_num-1)%len(voices)]} "{previous_line}"')
 
     def do_s(self, line):
         """s (means save)
